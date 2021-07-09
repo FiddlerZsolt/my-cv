@@ -1,0 +1,259 @@
+// === Imports ===
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+// === Properties ===
+$trans-time: .2s;
+
+// === Breakpoints === 
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 992px;
+$breakpoint-desktop: 1200px;
+$breakpoint-large: 1400px;
+
+// === Colors ===
+
+$light: #ecf0f1;
+$dark: #2c3e50;
+$dark-blue: #2980b9;
+
+// ===  ===
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    //color: $light;
+    color: $dark;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// === Tags ===
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    //background-color: $light;
+}
+
+@mixin responsive {
+    width: 80%;
+
+    @media (max-width: $breakpoint-large) {
+        width: 85%; 
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+        width: 85%; 
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        width: 95%;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        width: 100%;
+    }
+}
+
+.container {
+    @include responsive;
+
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.my-card {
+    min-height: 100%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    //background-color: $dark-blue;
+
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+    }
+}
+
+.pic-container {
+    display: none;
+    max-width: 100%;
+    border-radius: 50%;
+    margin: 20px 0;
+    padding: 0 10%;
+    background-color: transparent;
+
+    width: 100%;
+    height: 300px;
+
+    .pic-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        border: 3px solid $dark;
+        border-radius: 50%;
+        background-color: $light;
+        color: $dark;
+    }
+
+    #profil-pic {
+        width: 100%;
+        border: 3px solid $dark;
+        border-radius: 50%;
+    }
+}
+
+.personal-data {
+    width: 90%;
+
+    .my-name {
+        text-align: center;
+        font-size: 2.8em;
+        padding: 10px 0 15px 0;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $dark;
+
+        p {
+            font-size: 2rem;
+        }
+    }
+
+    .icon {
+        fill: $dark;
+        transition: $trans-time;
+    }
+
+    .my-data {
+        position: relative;
+        font-size: 1.5rem;
+        line-height: 55px;
+        transition: $trans-time;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: $light;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: $trans-time ease-in-out;
+        }
+
+        &:hover{
+            padding-left: 5px;
+
+            &:before {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    .my-data {
+        padding: 10px 0;
+    }
+}
+
+.my-description {
+    min-height: 100%;
+    width: 70%;
+    padding: 2% 6%;
+    padding-top: 58px;
+    //background-color: $dark;
+
+    @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+    }
+
+    .icon {
+        fill: $dark;
+    }
+
+    h3 {
+        position: relative;
+        display: flex;align-items: center;
+        margin: 20px 0 5px 0;
+
+        .time-interval {
+            position: absolute;
+            right: 0;
+
+            @media (max-width: $breakpoint-laptop) {
+                font-size: .8rem;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                font-size: .7rem;
+            }
+        }
+    }
+
+    span {
+        font-size: 1.1rem;
+        margin-left: 10px;
+    }
+
+    ul {
+        margin-left: 15px;
+
+        li {
+            line-height: 160%;
+        }
+    }
+}
+
+.studies, .works, .dev-skills, .personal-skills, .personal-hobbies {
+    margin-bottom: 60px;
+}
+
+.section-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid $dark-blue;
+    margin: 10px 0;
+}
+
+footer {
+    border-top: 2px solid $dark-blue;
+    background-color: $dark;
+    display: flex;
+    padding: 10px 0;
+    table {
+
+        td {
+            padding: 0 5px;
+        }
+    }
+    display: none;
+}
