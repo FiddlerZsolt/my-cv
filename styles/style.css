@@ -203,10 +203,12 @@ body {
 }
 
 .my-description {
+  position: relative;
   min-height: 100%;
   width: 70%;
   padding: 2% 6%;
   padding-top: 58px;
+  padding-bottom: 58px;
   background-color: #2c3e50;
 }
 
@@ -254,15 +256,15 @@ body {
 }
 
 .my-description ul {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .my-description ul li {
-  line-height: 160%;
+  line-height: 1.6;
 }
 
 .studies, .works, .dev-skills, .personal-skills, .personal-hobbies {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .section-name {
@@ -285,13 +287,9 @@ body {
 }
 
 footer {
-  border-top: 2px solid #2980b9;
-  background-color: #2c3e50;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: absolute;
   padding: 10px 0;
-  display: none;
+  bottom: 0;
 }
 
 footer table td {

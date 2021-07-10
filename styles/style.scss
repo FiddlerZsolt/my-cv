@@ -182,10 +182,12 @@ body {
 }
 
 .my-description {
+    position: relative;
     min-height: 100%;
     width: 70%;
     padding: 2% 6%;
     padding-top: 58px;
+    padding-bottom: 58px;
     background-color: $dark;
 
     @media (max-width: $breakpoint-tablet) {
@@ -221,16 +223,16 @@ body {
     }
 
     ul {
-        margin-left: 15px;
+        margin-left: 20px;
 
         li {
-            line-height: 160%;
+            line-height: 1.6;
         }
     }
 }
 
 .studies, .works, .dev-skills, .personal-skills, .personal-hobbies {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-name {
@@ -244,15 +246,13 @@ body {
 }
 
 footer {
-    border-top: 2px solid $dark-blue;
-    background-color: $dark;
-    display: flex;
+    position: absolute;
     padding: 10px 0;
+    bottom: 0;
     table {
 
         td {
             padding: 0 5px;
         }
     }
-    display: none;
 }
